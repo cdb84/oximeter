@@ -35,7 +35,7 @@ else:
     sleep_int = 3600
     
 host_ip = socket.gethostbyname(host_str)
-client_ip = str(urlopen("https://connorsco.de/ip.php").read())
+client_ip = str(urlopen("https://api.ipify.org").read())
 server_address = (host_ip, 25001)
 
 print('Connecting to %s port %s' % server_address)
