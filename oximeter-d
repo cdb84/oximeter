@@ -1,0 +1,18 @@
+#!/bin/bash
+#Carry out specific functions when asked to by the system
+#v2.5
+case "$1" in
+  start)
+    echo "Starting Oximeter daemon"
+    nc -l -k -p 25001 >> /etc/oximeter.log
+    ;;
+  stop)
+    echo "Stopping Oximeter daemon"
+    ;;
+  *)
+    echo "Usage: oximeter-d {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
