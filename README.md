@@ -24,5 +24,5 @@ usage: `bash oximeter-server start`
 
 ### Todo
 
-- [] add C/C++ sources so that we don't have to rely on Python and Python Alone
-- [] write a better server daemon
+- [ ] add C/C++ sources so that we don't have to rely on Python and Python Alone
+- [ ] write a better server daemon
