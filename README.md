@@ -2,8 +2,7 @@
 
 usage: `oximeter-c.py [-h] [-d] [-t T] host`
 
-Oximeter: a program that contacts another host simply to let it know that it's
-alive.
+Oximeter: a program that contacts another host simply to let it know that your computer is alive.
 
 positional arguments:
 
