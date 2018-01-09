@@ -26,3 +26,8 @@ usage: `bash oximeter-server start`
 
 - [ ] add C/C++ sources so that we don't have to rely on Python and Python Alone
 - [ ] write a better server daemon
+
+### Pipe Dreams
+
+- [ ] Add geo-location
+- [ ] Create a whitelist so that unknown randos can't send their pulses to your server (even though it wouldn't make sense(???))
