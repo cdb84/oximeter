@@ -15,7 +15,7 @@ optional arguments:
 * `-h, --help  show this help message and exit`
 * `-d          Specifies wheter to run Oximeter client in daemon mode.`
 * `-t T        Optional time in seconds between sending a pulse in daemon mode. Default is 3600 (one hour).`
-## daemon
+## Server
 
 The `oximeter-server` file is a shell script. Running it in-shell will hi-jack the shell until it is SIGINT'd. 
 
