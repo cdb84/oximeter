@@ -1,6 +1,6 @@
 # oximeter
 
-usage: oximeter-c.py [-h] [-d] [-t T] host
+usage: `oximeter-c.py [-h] [-d] [-t T] host`
 
 Oximeter: a program that contacts another host simply to let it know that it's
 alive.
