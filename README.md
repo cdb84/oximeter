@@ -8,7 +8,7 @@ alive.
 positional arguments:
 
 
-* host        The remote computer to connect to.
+* `host        The remote computer to connect to.`
 
 optional arguments:
 
