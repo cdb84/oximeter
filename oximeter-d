@@ -6,11 +6,12 @@ case "$1" in
     echo "Starting Oximeter daemon"
     nc -l -k -p 25001 >> /etc/oximeter.log
     ;;
-  stop)
-    echo "Stopping Oximeter daemon"
-    ;;
+  #stop)
+    #echo "Stopping Oximeter daemon"
+    #TODO: add stuff to tidy log files here.
+    #;;
   *)
-    echo "Usage: oximeter-d {start|stop}"
+    echo "Usage: oximeter-d {start}"
     exit 1
     ;;
 esac
