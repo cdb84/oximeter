@@ -19,8 +19,8 @@ def exit_handler():
 
 parser = argparse.ArgumentParser(description="Oximeter: a program that contacts another host simply to let it know that it's alive.")
 parser.add_argument("host", help="The remote computer to connect to.", type=str)
-parser.add_argument("-d", help='Specifies wheter to run Oximeter Client in Daemon Mode.', action="store_true")
-parser.add_argument("-t", help="Optional time in seconds between sending a pulse. Default is 3600 (one hour).", type=int)
+parser.add_argument("-d", help='Specifies wheter to run Oximeter client in daemon mode.', action="store_true")
+parser.add_argument("-t", help="Optional time in seconds between sending a pulse in daemon mode. Default is 3600 (one hour).", type=int)
 args = parser.parse_args()
 daemon = bool(args.d)
 if daemon:
