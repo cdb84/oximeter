@@ -73,7 +73,6 @@ while True:
         message+="\n"
         
     print("Sending pulse to %s at %s GMT" % (host_ip, time))
-    #print(message)
     sock.sendall(message.encode())
     if not daemon:
         break
