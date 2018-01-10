@@ -12,9 +12,12 @@ positional arguments:
 optional arguments:
 
 
-* `-h, --help  show this help message and exit`
-* `-d          Specifies wheter to run Oximeter client in daemon mode.`
-* `-t T        Optional time in seconds between sending a pulse in daemon mode. Default is 3600 (one hour).`
+* `-h, --help            show this help message and exit`
+* `-d                    Specifies wheter to run Oximeter client in daemon mode.`
+* `-t T                  Optional time in seconds between sending a pulse in daemon mode. Default is 3600 (one hour).`
+* `-g, --use-geo         Use geo-location services. Accuracy may vary. Currently sends country code, city, and region.`
+* `-gv, --geographically-verbose
+                        Include latitude and longitude.`
 ## Server
 
 The `oximeter-server` file is a shell script. Running it in-shell will hi-jack the shell until it is SIGINT'd. 
@@ -29,5 +32,5 @@ usage: `bash oximeter-server start`
 
 ### Pipe Dreams
 
-- [ ] Add geo-location
+- [x] Add geo-location
 - [ ] Create a whitelist so that unknown randos can't send their pulses to your server (even though it wouldn't make sense(???))
