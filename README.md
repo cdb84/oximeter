@@ -7,7 +7,8 @@ Oximeter: a program that contacts another host simply to let it know that your c
 positional arguments:
 
 
-* `host        The remote computer to connect to.`
+* `host`
+  * The remote computer to connect to.
 
 optional arguments:
 

@@ -7,7 +7,7 @@ from time import sleep, localtime, strftime, gmtime
 import argparse
 import requests
 import json
-#v4.0 for python 3.6
+#v4.0 DEV for python 3.6
 #JAN 9 2018
 _default_sleep_ = 3600
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -62,6 +62,7 @@ while True:
         
         message += j['city']+", "
         message += j['region_code']+", "
+        message += j['zip_code']+" "
         message += j['country_code']+" "
 
         if args.geographically_verbose:
@@ -72,7 +73,6 @@ while True:
         message+="\n"
         
     print("Sending pulse to %s at %s GMT" % (host_ip, time))
-    #print(message)
     sock.sendall(message.encode())
     if not daemon:
         break
