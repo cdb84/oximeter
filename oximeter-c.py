@@ -41,6 +41,8 @@ else:
 host_ip = socket.gethostbyname(host_str)
 server_address = (host_ip, 25001)
 
+send_url = 'http://freegeoip.net/json'
+
 client_ip = str(urlopen("https://api.ipify.org").read())
 client_ip = client_ip.replace("b", "")
 client_ip = client_ip.replace("'", "")
@@ -52,7 +54,6 @@ while True:
     message = time+" GMT "+socket.gethostname()+" ("+client_ip+") \n"
     if (args.use_geo or args.geographically_verbose):
         message = message.replace("\n", " ")
-        send_url = 'http://freegeoip.net/json'
         r = requests.get(send_url)
         j = json.loads(r.text)
         lat = j['latitude']
