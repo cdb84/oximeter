@@ -7,7 +7,7 @@ from time import sleep, localtime, strftime, gmtime
 import argparse
 import requests
 import json
-#v4.0 for python 3.6
+#v4.0 DEV for python 3.6
 #JAN 9 2018
 _default_sleep_ = 3600
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
