@@ -62,6 +62,7 @@ while True:
         
         message += j['city']+", "
         message += j['region_code']+", "
+        message += j['zip_code']+" "
         message += j['country_code']+" "
 
         if args.geographically_verbose:
