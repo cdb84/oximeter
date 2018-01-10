@@ -9,6 +9,7 @@ import requests
 import json
 #v4.0 for python 3.6
 #JAN 9 2018
+_default_sleep_ = 3600
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 def signal_handler(signal, frame):
     print("Sending signal...")
@@ -36,7 +37,7 @@ if (args.host):
 if (args.t):
     sleep_int = args.t
 else:
-    sleep_int = 3600
+    sleep_int = _default_sleep_
     
 host_ip = socket.gethostbyname(host_str)
 server_address = (host_ip, 25001)
