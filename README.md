@@ -25,15 +25,15 @@ optional arguments:
   * Include latitude and longitude.
 ## Server
 
-The `oximeter-server` file is a shell script. Running it in-shell will hi-jack the shell until it is SIGINT'd. 
+The `oximeter-server` file is a shell script. It creates a netcat process and records the pid to a temp file. Output logs can be found in /var/log/oximeter/.
 
-usage: `bash oximeter-server start`
+usage: `bash oximeter-server {start|stop|restart}`
 
 
 ### Todo
 
 - [ ] Add C/C++ sources so that we don't have to rely on Python and Python Alone
-- [ ] Write a better server daemon
+- [x] Write a better server daemon
 
 ### Pipe Dreams
 
