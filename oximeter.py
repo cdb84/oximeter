@@ -10,6 +10,7 @@ import json
 #v4.0 DEV for python 3.6
 #JAN 9 2018
 _default_sleep_ = 3600
+_port_ = 25001
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 def signal_handler(signal, frame):
     print("Sending signal...")
@@ -40,7 +41,7 @@ else:
     sleep_int = _default_sleep_
     
 host_ip = socket.gethostbyname(host_str)
-server_address = (host_ip, 25001)
+server_address = (host_ip, _port_)
 
 send_url = 'http://freegeoip.net/json'
 
