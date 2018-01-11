@@ -1,17 +1,34 @@
 #!/bin/bash
 #Carry out specific functions when asked to by the system
 #v2.5
+dstart(){
+    echo "Starting Oximeter daemon"
+    mkdir -p /var/log/oximeter/
+    (nc -l -k -p 25001 >> /var/log/oximeter/oximeter.log 2> /var/log/oximeter/oximeter.err & echo $! > /tmp/oximeter.pid)&
+    return 0
+}
+dstop(){
+    echo "Stopping Oximeter daemon"
+    PREVPID=$(cat /tmp/oximeter.pid)
+    kill -9 $PREVPID
+    return 0
+}
+
+
 case "$1" in
   start)
-    echo "Starting Oximeter daemon"
-    nc -l -k -p 25001 >> /etc/oximeter.log
-    ;;
-  #stop)
-    #echo "Stopping Oximeter daemon"
-    #TODO: add stuff to tidy log files here.
-    #;;
+      dstart
+      ;;
+  stop)
+      dstop
+      #TODO: add stuff to tidy log files here.
+      ;;
+  restart)
+      dstop
+      dstart
+      ;;
   *)
-    echo "Usage: oximeter-d {start}"
+    echo "Usage: oximeter-d {start|stop|restart}"
     exit 1
     ;;
 esac
