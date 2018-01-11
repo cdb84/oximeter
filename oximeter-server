@@ -1,6 +1,5 @@
 #!/bin/bash
-#Carry out specific functions when asked to by the system
-#v2.5
+#v3
 dstart(){
     echo "Starting Oximeter daemon"
     mkdir -p /var/log/oximeter/
