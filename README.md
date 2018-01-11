@@ -34,6 +34,7 @@ usage: `bash oximeter-server {start|stop|restart}`
 
 - [ ] Add C/C++ sources so that we don't have to rely on Python and Python Alone
 - [x] Write a better server daemon
+- [ ] Use only libraries that Python3.4 for Windows is comfortable with :/
 
 ### Pipe Dreams
 
