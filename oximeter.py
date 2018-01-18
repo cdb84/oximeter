@@ -31,15 +31,18 @@ parser.add_argument("-g", "--use-geo", help="Use geo-location services. Accuracy
 parser.add_argument("-gv", "--geographically-verbose", help="Include latitude and longitude.", action="store_true")
 args = parser.parse_args()
 daemon = bool(args.d)
-if daemon: #handlers only needed for daemon mode
+#handlers only needed for daemon mode
+if daemon: 
     atexit.register(exit_handler)
     signal(SIGINT, signal_handler)
     signal(SIGTERM, signal_handler)
 if (args.host):
     host_str = args.host
-if (args.t): #assume user values for sleep interval
+#assume user values for sleep interval
+if (args.t): 
     sleep_int = args.t
-else: #assume default values for sleep interval
+#assume default values for sleep interval
+else: 
     sleep_int = _default_sleep_
     
 #resolve the host
@@ -50,6 +53,7 @@ server_address = (host_ip, _port_)
 send_url = 'http://freegeoip.net/json'
 #gather information about our client (just the ip)
 client_ip = str(urlopen("https://api.ipify.org").read())
+#trim some unicode leftovers
 client_ip = client_ip.replace("b", "")
 client_ip = client_ip.replace("'", "")
 
@@ -60,7 +64,8 @@ while True:
     time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
     #start developing a message to send across TCP
     message = time+" GMT "+socket.gethostname()+" ("+client_ip+") \n"
-    if (args.use_geo or args.geographically_verbose):#considering geoip options:
+    #considering geoip options:
+    if (args.use_geo or args.geographically_verbose):
         message = message.replace("\n", " ")
         r = requests.get(send_url)
         j = json.loads(r.text)
@@ -78,10 +83,11 @@ while True:
             message += str(lon)
 
         message+="\n"
-        
+    #tell the user what's going on
     print("Sending pulse to %s at %s GMT" % (host_ip, time))
     #ship the message
     sock.sendall(message.encode())
     if not daemon:
         break #we only need to do this once if not daemonized
-    sleep(sleep_int)#otherwise, sleep and repeat
+    #otherwise, sleep and repeat
+    sleep(sleep_int)
