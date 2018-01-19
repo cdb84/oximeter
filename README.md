@@ -31,8 +31,8 @@ usage: `bash oximeter-server {start|stop|restart}` (for startin in a TTY)
 
 In order to add the server to your machine's startup:
 
-1. First move the sctip to `/etc/init.d/` with `sudo cp -v ./oximeter-server /etc/init.d/`
-1. Run the commant `sudo update-rc.d oximeter-server default` to configure SystemV and LSB info
+1. First move the script to `/etc/init.d/` with `sudo cp -v ./oximeter-server /etc/init.d/`
+1. Run the command `sudo update-rc.d oximeter-server default` to configure SystemV and LSB info
 1. Either wait for next reboot to start the server, or run `sudo service oximeter-server start`
 
 
