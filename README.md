@@ -1,9 +1,11 @@
 # oximeter
+A program that contacts another host simply to let it know that your computer is alive. Client written in Python3 using simple socket programming that sends time, IP address and some approximate geographical data to the server/host. 
+
+The server is grossly simple: a netcat instance binded to port 25001 and constantly recording what it receives into a log file.
+
 All programs use TCP/IP port 25001.
 ## Client
 usage: `oximeter-c.py [-h] [-d] [-t T] host`
-
-Oximeter: a program that contacts another host simply to let it know that your computer is alive.
 
 positional arguments:
 
