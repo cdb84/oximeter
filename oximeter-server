@@ -1,4 +1,5 @@
 #!/bin/bash
+<<<<<<< HEAD
 #v2.6
 ### BEGIN INIT INFO
 # Provides:          oximeter-server
@@ -9,6 +10,9 @@
 # Description:       An Oximeter server listening and recording on port 25001
 ### END INIT INFO
 
+=======
+#v3
+>>>>>>> master
 dstart(){
     if [ -f /run/oximeter.pid ]; then
       echo "Oximeter instance running on "$(cat /run/oximeter.pid)

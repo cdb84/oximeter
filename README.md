@@ -1,4 +1,5 @@
 # oximeter
+All programs use TCP/IP port 25001.
 ## Client
 usage: `oximeter-c.py [-h] [-d] [-t T] host`
 
