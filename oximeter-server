@@ -23,6 +23,7 @@ dstop(){
     echo "Stopping Oximeter daemon"
     PREVPID=$(cat /var/run/oximeter.pid)
     kill -9 $PREVPID
+    rm /run/oximeter.pid
     return 0
 }
 
@@ -34,7 +35,6 @@ case "$1" in
   stop)
       dstop
       #TODO: add stuff to tidy log files here.
-      rm /run/oximeter.pid
       ;;
   restart)
       dstop
