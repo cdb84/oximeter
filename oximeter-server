@@ -1,14 +1,32 @@
 #!/bin/bash
+<<<<<<< HEAD
+#v2.6
+### BEGIN INIT INFO
+# Provides:          oximeter-server
+# Required-Start:    $local_fs $network $named $time $syslog
+# Required-Stop:     $local_fs $network $named $time $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Description:       An Oximeter server listening and recording on port 25001
+### END INIT INFO
+
+=======
 #v3
+>>>>>>> master
 dstart(){
-    echo "Starting Oximeter daemon"
-    mkdir -p /var/log/oximeter/
-    (nc -l -k -p 25001 >> /var/log/oximeter/oximeter.log 2> /var/log/oximeter/oximeter.err & echo $! > /tmp/oximeter.pid)&
-    return 0
+    if [ -f /run/oximeter.pid ]; then
+      echo "Oximeter instance running on "$(cat /run/oximeter.pid)
+      exit 1
+    else 
+      echo "Starting Oximeter daemon"
+      mkdir -p /var/log/oximeter/
+      (nc -l -k -p 25001 >> /var/log/oximeter/oximeter.log 2> /var/log/oximeter/oximeter.err & echo $! > /run/oximeter.pid)&
+      return 0
+    fi
 }
 dstop(){
     echo "Stopping Oximeter daemon"
-    PREVPID=$(cat /tmp/oximeter.pid)
+    PREVPID=$(cat /var/run/oximeter.pid)
     kill -9 $PREVPID
     return 0
 }
@@ -21,6 +39,7 @@ case "$1" in
   stop)
       dstop
       #TODO: add stuff to tidy log files here.
+      rm /run/oximeter.pid
       ;;
   restart)
       dstop
