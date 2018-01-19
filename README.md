@@ -27,7 +27,7 @@ optional arguments:
 
 The `oximeter-server` file is a shell script. It creates a netcat process and records the pid to a temp file. Output logs can be found in /var/log/oximeter/.
 
-usage: `bash oximeter-server {start|stop|restart}` (for startin in a TTY)
+usage: `bash oximeter-server {start|stop|restart}` (for starting in a TTY)
 
 In order to add the server to your machine's startup:
 
