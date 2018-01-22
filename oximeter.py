@@ -23,7 +23,7 @@ def exit_handler():
     sock.sendall(("Daemon exit on "+socket.gethostname()+" at "+strftime("%Y-%m-%d %H:%M:%S", gmtime())+" GMT\n").encode())
 
 
-parser = argparse.ArgumentParser(description="Oximeter: a program that contacts another host simply to let it know that it's alive.")
+parser = argparse.ArgumentParser(description="Oximeter: a program that contacts another host to remotely monitor system status.")
 parser.add_argument("host", help="The remote computer to connect to.", type=str)
 parser.add_argument("-d", help='Specifies wheter to run Oximeter client in daemon mode.', action="store_true")
 parser.add_argument("-t", help="Optional time in seconds between sending a pulse in daemon mode. Default is 3600 (one hour).", type=int)
