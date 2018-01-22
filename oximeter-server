@@ -15,7 +15,7 @@ dstart(){
     else 
       echo "Starting Oximeter daemon"
       mkdir -p /var/log/oximeter/
-      (nc -l -k -p 25001 >> /var/log/oximeter/oximeter.log 2> /var/log/oximeter/oximeter.err & echo $! > /run/oximeter.pid)&
+      (nohup nc -l -k -p 25001 >> /var/log/oximeter/oximeter.log 2> /var/log/oximeter/oximeter.err & echo $! > /run/oximeter.pid)&
       return 0
     fi
 }
