@@ -28,6 +28,10 @@ optional arguments:
   * Include latitude and longitude.
 ## Server
 
+### Fatal Issue
+
+Currently, the server experiences a problem where the forked netcat process becomes unresponsive after some time. I've tried looking into this but it's been a cold-case as far as the culprit.
+
 The `oximeter-server` file is a shell script. It creates a netcat process and records the pid to a temp file. Output logs can be found in /var/log/oximeter/.
 
 usage: `bash oximeter-server {start|stop|restart}` (for starting in a TTY)
