@@ -9,6 +9,8 @@ import requests
 import json
 #v4.0 DEV for python 3.6
 #JAN 9 2018
+send_url = "http://freegeoip.net/json"
+ip_get_url = "https://api.ipify.org"
 _default_sleep_ = 3600
 _port_ = 25001
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -49,10 +51,9 @@ else:
 host_ip = socket.gethostbyname(host_str)
 #create a tuple/ordered pair for our host and port
 server_address = (host_ip, _port_)
-#geoip url
-send_url = 'http://freegeoip.net/json'
 #gather information about our client (just the ip)
-client_ip = str(urlopen("https://api.ipify.org").read())
+#TODO: use requests.get(ip_get_url) instead of urllib
+client_ip = str(urlopen(ip_get_url).read())
 #trim some unicode leftovers
 client_ip = client_ip.replace("b", "")
 client_ip = client_ip.replace("'", "")
